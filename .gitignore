@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.db
+data/models/*.pkl
+frontend/node_modules/
+frontend/build/
+.DS_Store
+*.egg-info/
