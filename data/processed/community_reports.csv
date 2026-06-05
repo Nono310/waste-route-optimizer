@@ -1,0 +1,11 @@
+report_id,bin_id,reporter,phone,message,fill_level,timestamp,status
+RPT0001,BIN003,Emmanuel Tabi,+237670001001,"Bin overflowing at Molyko Market, very bad smell",98.0,2026-04-23T01:36:18.199997,received
+RPT0002,BIN006,Grace Ndongo,+237680002002,"Great Soppo bin full, waste spilling on the road",95.0,2026-04-23T01:36:19.636932,received
+RPT0003,BIN011,Paul Ekeme,+237690003003,Mile 16 market bin needs urgent collection,92.0,2026-04-23T01:36:19.665132,received
+RPT0004,BIN022,Mary Epie,+237670004004,Buea Town Hall bin is almost full,85.0,2026-04-23T01:36:19.696268,received
+RPT0005,BIN014,Peter Nguele,+237680005005,Clerks Quarter bin filling up fast today,78.0,2026-04-23T01:36:19.721364,received
+RPT0006,BIN003,Emmanuel Tabi,+237670001001,"Bin overflowing at Molyko Market, very bad smell",98.0,2026-04-23T10:50:00.864089,received
+RPT0007,BIN006,Grace Ndongo,+237680002002,"Great Soppo bin full, waste spilling on the road",95.0,2026-04-23T10:50:01.968271,received
+RPT0008,BIN011,Paul Ekeme,+237690003003,Mile 16 market bin needs urgent collection,92.0,2026-04-23T10:50:02.050667,received
+RPT0009,BIN022,Mary Epie,+237670004004,Buea Town Hall bin is almost full,85.0,2026-04-23T10:50:02.124636,received
+RPT0010,BIN014,Peter Nguele,+237680005005,Clerks Quarter bin filling up fast today,78.0,2026-04-23T10:50:02.199933,received

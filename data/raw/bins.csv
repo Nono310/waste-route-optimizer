@@ -1,0 +1,31 @@
+bin_id,name,lat,lon,capacity_kg,neighborhood
+BIN001,Molyko Junction,4.1527,9.2916,100,Molyko
+BIN002,UB Main Gate,4.1545,9.2933,120,Molyko
+BIN003,Molyko Market,4.1511,9.2901,150,Molyko
+BIN004,Bonduma Center,4.1476,9.2856,100,Bonduma
+BIN005,Bonduma Health Center,4.1489,9.2871,80,Bonduma
+BIN006,Great Soppo Market,4.1432,9.2801,150,Great Soppo
+BIN007,Great Soppo Junction,4.1418,9.2789,100,Great Soppo
+BIN008,Small Soppo Center,4.1398,9.2754,80,Small Soppo
+BIN009,Small Soppo School,4.1411,9.2768,80,Small Soppo
+BIN010,Mile 16 Junction,4.1601,9.2698,120,Mile 16
+BIN011,Mile 16 Market,4.1589,9.2712,150,Mile 16
+BIN012,Bokwango Road,4.1367,9.2845,80,Bokwango
+BIN013,Bokwango Village,4.1351,9.2832,80,Bokwango
+BIN014,Clerks Quarter,4.1556,9.2978,100,Clerks Quarter
+BIN015,Clerks Quarter Market,4.1567,9.2991,120,Clerks Quarter
+BIN016,Federal Quarter,4.1623,9.3012,100,Federal Quarter
+BIN017,Federal Quarter Park,4.1638,9.3028,80,Federal Quarter
+BIN018,GRA Junction,4.1578,9.3045,120,GRA
+BIN019,GRA Market,4.1591,9.3061,100,GRA
+BIN020,Sandpit Junction,4.1445,9.3089,80,Sandpit
+BIN021,Sandpit Market,4.1458,9.3102,100,Sandpit
+BIN022,Buea Town Hall,4.1534,9.3134,150,Buea Town
+BIN023,Buea Town Market,4.1521,9.3118,150,Buea Town
+BIN024,Wokoko Junction,4.1489,9.3156,100,Wokoko
+BIN025,Wokoko Center,4.1501,9.3171,80,Wokoko
+BIN026,Lysoka Junction,4.1712,9.2823,100,Lysoka
+BIN027,Lysoka Market,4.1698,9.2809,120,Lysoka
+BIN028,Tole Junction,4.1334,9.2712,80,Tole
+BIN029,Tole Tea Estate,4.1318,9.2698,80,Tole
+BIN030,Camp Sic Junction,4.1623,9.2945,100,Camp Sic

@@ -1,0 +1,11 @@
+truck_id,stop_order,bin_id,bin_name,neighborhood,lat,lon,demand_kg,fill_percentage,route_distance_km
+TRUCK01,1,BIN013,Bokwango Village,Bokwango,4.1351,9.2832,51.84,64.8,14.78
+TRUCK01,2,BIN007,Great Soppo Junction,Great Soppo,4.1418,9.2789,78.4,78.4,14.78
+TRUCK01,3,BIN010,Mile 16 Junction,Mile 16,4.1601,9.2698,86.04,71.7,14.78
+TRUCK01,4,BIN030,Camp Sic Junction,Camp Sic,4.1623,9.2945,67.9,67.9,14.78
+TRUCK01,5,BIN016,Federal Quarter,Federal Quarter,4.1623,9.3012,80.6,80.6,14.78
+TRUCK01,6,BIN017,Federal Quarter Park,Federal Quarter,4.1638,9.3028,51.92,64.9,14.78
+TRUCK01,7,BIN024,Wokoko Junction,Wokoko,4.1489,9.3156,67.0,67.0,14.78
+TRUCK01,8,BIN020,Sandpit Junction,Sandpit,4.1445,9.3089,66.0,82.5,14.78
+TRUCK01,9,BIN014,Clerks Quarter,Clerks Quarter,4.1556,9.2978,68.9,68.9,14.78
+TRUCK01,10,BIN001,Molyko Junction,Molyko,4.1527,9.2916,79.2,79.2,14.78

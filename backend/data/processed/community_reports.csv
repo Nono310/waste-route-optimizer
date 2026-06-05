@@ -1,0 +1,2 @@
+report_id,bin_id,reporter,phone,message,fill_level,timestamp,status
+RPT0001,BIN001,Amara,+237670000001,Bin is overflowing near Molyko Junction,95.0,2026-04-22T01:25:29.105876,received
