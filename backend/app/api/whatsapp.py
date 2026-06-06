@@ -76,4 +76,5 @@ async def whatsapp_webhook(
         f"Our team has been notified. Thank you for keeping Buea clean! 🌿"
     )
     response.message(reply)
-    return response.to_xml()
+    from fastapi.responses import Response
+    return Response(content=response.to_xml(), media_type="application/xml")
