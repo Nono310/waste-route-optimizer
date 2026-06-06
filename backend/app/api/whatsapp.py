@@ -9,7 +9,7 @@ router = APIRouter()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 # In-memory store shared with routes.py
-community_reports = []
+from app.utils.store import community_reports
 
 @router.post("/whatsapp")
 async def whatsapp_webhook(

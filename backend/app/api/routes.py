@@ -8,7 +8,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 router = APIRouter()
-community_reports = []
+from app.utils.store import community_reports
 
 class ReportRequest(BaseModel):
     bin_id: str
