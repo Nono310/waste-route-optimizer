@@ -80,10 +80,9 @@ def run_genetic_algorithm(bins_to_collect):
         return ind
 
     random.seed(42)
-    POP  = 100
-    GENS = 200
-    pop  = [random.sample(bin_indices, len(bin_indices)) for _ in range(POP)]
-
+POP  = min(100, max(10, len(bin_indices) * 5))
+GENS = 200
+pop  = [random.sample(bin_indices, len(bin_indices)) for _ in range(POP)]
     best_chrom, best_fit, best_dist = None, -1, float("inf")
 
     for _ in range(GENS):
