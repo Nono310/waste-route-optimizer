@@ -5,7 +5,7 @@ const API = axios.create({
 });
 
 export const getBins = () => API.get("/bins");
-export const getPredictions = () => API.get("/predict");
-export const getOptimizedRoutes = () => API.get("/optimize");
+export const getPredictions = () => API.get("/predict?hour=18&day=5");
+export const getOptimizedRoutes = (hour = 18, day = 5) => API.get(`/optimize?hour=${hour}&day=${day}`);
 export const submitReport = (data) => API.post("/report", data);
 export const getReports = () => API.get("/reports");
