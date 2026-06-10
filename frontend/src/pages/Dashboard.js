@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
-import { getPredictions } from "../services/api";
+
 
 const StatCard = ({ title, value, color, icon }) => (
   <div style={{
@@ -18,17 +18,8 @@ const StatCard = ({ title, value, color, icon }) => (
   </div>
 );
 
-export default function Dashboard() {
-  const [predictions, setPredictions] = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [error, setError]             = useState(null);
-
-  useEffect(() => {
-    getPredictions()
-      .then(res => { setPredictions(res.data.predictions || []); setLoading(false); })
-      .catch(() => { setError("Failed to load. Is the backend running?"); setLoading(false); });
-  }, []);
-
+export default function Dashboard({ predictions = [], loading = false }) {
+  const [error] = useState(null);
   if (loading) return <div style={{ textAlign: "center", padding: "40px" }}>⏳ Loading...</div>;
   if (error)   return <div style={{ color: "red", padding: "20px" }}>❌ {error}</div>;
 

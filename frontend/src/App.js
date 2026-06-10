@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dashboard from "./pages/Dashboard";
 import MapView from "./pages/MapView";
 import Routes from "./pages/Routes";
 import ReportForm from "./pages/ReportForm";
+import { getPredictions } from "./services/api";
 import "./App.css";
 
 const TABS = [
@@ -13,11 +14,29 @@ const TABS = [
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("Dashboard");
+  const [activeTab, setActiveTab]       = useState("Dashboard");
+  const [predictions, setPredictions]   = useState([]);
+  const [loadingPreds, setLoadingPreds] = useState(true);
+
+  // Load predictions once at app level and share across all tabs
+  useEffect(() => {
+    const fetchPreds = () => {
+      getPredictions()
+        .then(res => {
+          setPredictions(res.data.predictions || []);
+          setLoadingPreds(false);
+        })
+        .catch(() => setLoadingPreds(false));
+    };
+    fetchPreds();
+    // Refresh every 30 seconds
+    const interval = setInterval(fetchPreds, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", minHeight: "100vh", background: "#f0f4f8" }}>
-      
+
       {/* HEADER */}
       <div style={{
         background: "linear-gradient(135deg, #1a5276, #2e86c1)",
@@ -30,10 +49,11 @@ export default function App() {
         </h1>
         <p style={{ margin: "2px 0 0", fontSize: "11px", opacity: 0.85 }}>
           Buea, Cameroon · University of Buea
+          {loadingPreds && <span style={{ marginLeft: "8px", opacity: 0.7 }}>⏳ Loading...</span>}
         </p>
       </div>
 
-      {/* TABS — scrollable on mobile */}
+      {/* TABS */}
       <div style={{
         background: "white",
         borderBottom: "2px solid #2e86c1",
@@ -66,8 +86,8 @@ export default function App() {
 
       {/* CONTENT */}
       <div style={{ padding: "16px" }}>
-        {activeTab === "Dashboard" && <Dashboard />}
-        {activeTab === "Map"       && <MapView />}
+        {activeTab === "Dashboard" && <Dashboard predictions={predictions} loading={loadingPreds} />}
+        {activeTab === "Map"       && <MapView predictions={predictions} loading={loadingPreds} />}
         {activeTab === "Routes"    && <Routes />}
         {activeTab === "Report"    && <ReportForm />}
       </div>
