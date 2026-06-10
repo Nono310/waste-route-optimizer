@@ -25,13 +25,19 @@ export default function MapView() {
   const [loading, setLoading]         = useState(true);
   const [routeLoading, setRouteLoading] = useState(false);
 
-  useEffect(() => {
+  const fetchPredictions = () => {
     getPredictions()
       .then(res => {
         setPredictions(res.data.predictions || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchPredictions();
+    const interval = setInterval(fetchPredictions, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleLoadRoutes = () => {
@@ -99,6 +105,7 @@ export default function MapView() {
           ["🟢 Below 60%",  "#2ecc71"],
           ["🟡 60–80%",     "#f39c12"],
           ["🔴 Above 80%",  "#e74c3c"],
+          ["📱 Reported",   "#9b59b6"],
         ].map(([label, color]) => (
           <div key={label} style={{
             display: "flex", alignItems: "center", gap: "8px",
@@ -149,7 +156,7 @@ export default function MapView() {
               key={i}
               center={[bin.lat, bin.lon]}
               radius={bin.needs_collection ? 13 : 9}
-              fillColor={getBinColor(bin.predicted_fill)}
+              fillColor={bin.community_reported ? "#9b59b6" : getBinColor(bin.predicted_fill)}
               color="white"
               weight={2}
               fillOpacity={0.9}
@@ -167,6 +174,9 @@ export default function MapView() {
                   <div>Capacity: {bin.capacity_kg} kg</div>
                   <div>{bin.is_market_area ? "🏪 Market Area" : "🏘️ Residential"}</div>
                   <hr style={{ margin: "8px 0" }} />
+                  {bin.community_reported && (
+                    <span style={{ color: "#9b59b6", fontWeight: "bold", display: "block" }}>📱 Community Reported</span>
+                  )}
                   {bin.needs_collection
                     ? <span style={{ color: "#e74c3c", fontWeight: "bold" }}>⚠️ Needs Collection</span>
                     : <span style={{ color: "#2ecc71" }}>✅ Level OK</span>

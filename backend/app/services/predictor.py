@@ -107,4 +107,17 @@ def predict_waste_levels(hour=None, day_of_week=None):
             "is_market_area"  : bool(is_market)
         })
 
+   # Override predictions with community reports
+    try:
+        from app.utils.store import community_reports
+        for report in community_reports:
+            for result in results:
+                if result["bin_id"] == report["bin_id"]:
+                    if report["fill_level"] > result["predicted_fill"]:
+                        result["predicted_fill"] = round(report["fill_level"], 1)
+                        result["needs_collection"] = report["fill_level"] >= 60
+                        result["community_reported"] = True
+    except Exception as e:
+        print(f"Community report override error: {e}")
+
     return results
